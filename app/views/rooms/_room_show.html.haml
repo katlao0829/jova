@@ -1,0 +1,33 @@
+.MainChat__Chat
+  .MainChat__Chat__Content
+    .MainChat__Chat__Content__Box
+      - @directmessages.each do |message|
+        .Content--for--message
+          .Content
+            .items
+              = image_tag message.user.image.url
+              .user--name
+                = message.user.name
+            .message_box
+              = message.content
+    .Message__Form
+      = form_with model: [@room, @directmessage], local: true do |f|
+        = f.text_field :content, class: "FormMessage", placeholder: "メッセージ"
+        = f.label class: "FormSubmit" do
+          = icon('far', 'paper-plane', class: "Sendicon")
+        = f.submit class: "Hidden" 
+  .DMUser
+    .DMUser__Info
+      = image_tag @user.image.url
+      .dmuser--infos
+        .dmuser--name
+          = @user.name 
+        .dmuser--infoa
+          %span 隊次：
+          = @user.term
+        .dmuser--infoa
+          %span 派遣国：
+          = @user.country
+        .dmuser--infoa
+          %span 職種：
+          = @user.job

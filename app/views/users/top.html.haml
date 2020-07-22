@@ -1,0 +1,34 @@
+.TopHeader
+  .TopHeader__Main
+    %p.title JO場 [JOVA]
+    %p.Sub ~JICA協力隊コミュニティ~
+.TopMain
+  .TopLogin
+    - unless user_signed_in?
+      .Login--btn
+        = link_to "ログイン", new_user_session_path, class: 'TopUserLogin'
+      .Reg--btn
+        = link_to "新規会員登録", new_user_registration_path, class: 'TopUserReg'
+    - if user_signed_in?
+      .Login--btn
+        = link_to "マイページ", user_path(current_user), class: 'TopUserLogin'
+  .TopMain__Box
+    .TopMidashi
+      %p.H 協力隊で繋がりませんか？
+      .TopMessage
+        %p 『JO場』はJICA協力隊として途上国での活動経験を持つ方が交流するコミュニティスペースです。
+        %br
+        %p - 経験をなかなか共有する場がない。
+        %p - 共通の趣味を持った人と出会いたい。
+        %br
+        %p そんなもどかしい思いを解決するコミュニティスペースを提供します。
+    .TopImage
+      = image_tag src="/assets/children.jpg"
+  -# .TopMain__Box
+  -#   .TopImage
+  -#     = image_tag src="/assets/sayaboury.jpg"
+  -#   .TopMidashi
+  -#     %p.H 目的別にグループチャット
+  -#     .TopMessage
+  -#       %p ビジネス、国、職種、婚活、様々な目的に合わせたグループを作成することができ、グループ内で交流することができます。
+      

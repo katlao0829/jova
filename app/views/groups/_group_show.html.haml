@@ -1,0 +1,25 @@
+= render "group_head"
+.MainChat__Info
+  .MainChat__Info__Introduction
+    .GroupShow
+      .GroupImage
+        = image_tag @group.image.url
+      .GroupInfo
+        = @group.info
+    .GroupBtn
+      - if @group.users.include?(current_user)
+        = link_to "チャット", group_messages_path(@group)
+        = link_to "編集", edit_group_path
+
+  .MainChat__Info__Member
+    .Member__btn
+      %p メンバー
+      - unless @group.users.include?(current_user)
+        =link_to "参加", join_group_path(@group)
+    - @group.users.each do |user|
+      = link_to user_path(user.id) do
+        .MemberList
+          .MemberImage
+            = image_tag user.image.url
+          .MemberName
+            = user.name

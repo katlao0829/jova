@@ -1,0 +1,46 @@
+= render "./header"
+.AccountPage
+  .AccountPage__title
+    %h2 アカウントの編集
+    = link_to "戻る", :back, class: 'Button'
+  .AccountPage__form
+    = form_for(current_user) do |f|
+      .FormField
+        .FormField__label--normal
+          = f.label "◉お名前(フルネーム)"
+        .FormField__input--normal
+          = f.text_field :name, class: "form-a", autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label "◉メールアドレス"
+        .FormField__input--normal
+          = f.email_field :email, class: "form-a"
+      .FormField
+        .FormField__label--normal
+          = f.label "◉派遣国"
+        .FormField__input--normal
+          = f.text_field :country, class: "form-a"
+      .FormField
+        .FormField__label--normal
+          = f.label "◉職種"
+        .FormField__input--normal
+          = f.text_field :job, class: "form-a"
+      .FormField
+        .FormField__label--normal
+          = f.label "◉派遣隊次"
+        .FormField__input--normal
+          = f.text_field :term, class: "form-a"
+      .FormField
+        .FormField__label--normal
+          = f.label "◉自己紹介"
+        .FormField__input--normal
+          = f.text_area :introduction, class: "form-b"
+      .FormField
+        .FormField__label--normal
+          = f.label "◉プロフィール画像"
+        = image_tag current_user.image.url, class: 'User__image' if current_user.image.present?
+        .FormField__input--normal
+          = f.label :image do
+            = icon('fas', 'portrait', class: "photo")
+            = f.file_field :image, class: "hidden"
+      = f.submit "更新", class: 'Update'

@@ -1,0 +1,11 @@
+.Header
+  .HeaderMain
+    %p.title JO場 [JOVA]
+    %p.Sub ~JICA協力隊コミュニティ~
+
+  .HeaderBottom
+    .HeaderMenu
+      =link_to "Top", root_path 
+      - if user_signed_in?
+        =link_to "MyPage", user_path(current_user.id)
+        =link_to "MyGroup", mygroup_group_path(current_user.id) 

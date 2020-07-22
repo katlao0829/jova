@@ -1,0 +1,75 @@
+.TopHeader{
+  height: 80px;
+  width: 100vw;
+  background-color: $base_blue_dark;
+  &__Main{
+    height: 80px;
+    position: relative;
+    p.title{
+      position: absolute;
+      top: 10px;
+      left: 30px;
+      font-size: 30px;
+      font-weight: bold;
+      color: $base_white;
+    }
+    p.Sub{
+      position: absolute;
+      bottom: 5px;
+      left: 35px;
+      font-size: 15px;
+      color: $base_white;
+    
+    }
+  }
+}
+.TopMain{
+  padding: 50px;
+  background-image: url(/assets/36223.jpg);
+  position: relative;
+  .TopLogin{
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    display: flex;
+    .Login--btn{
+      margin-right: 30px;
+      @include btn-css();
+    }
+    .Reg--btn{
+      margin-right: 30px;
+      @include btn-css();
+    }
+    a{
+      text-decoration: none;
+      color: white;
+    }
+  }
+  &__Box{
+    display: flex;
+    justify-content: center;
+    padding: 80px;
+    .TopMidashi{
+      padding: 50px;
+      color: $base_blue_dark;
+      p.H{
+        font-size: 30px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        .TopMessage{
+          p{
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .TopImage{
+      img{
+      height: 400px;
+      width: 550px;
+      border-radius: 20px;
+      opacity: 0.9;
+      }
+    }
+  }
+}

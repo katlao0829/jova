@@ -1,0 +1,84 @@
+.Group__Function{
+  display: flex;
+  height: 10%;
+  padding: 20px;
+  box-sizing: border-box;
+  .SearchBox{
+    width: 600px;
+    height: 34px;
+    text-align: center;
+    border-color: #0f9ada;
+    border-radius: 10px;
+  }
+  .Btn{
+    @include btn-css();
+  }
+  .btn--create{
+    @include btn-css();
+    margin-left: 50px;
+  }
+}
+.Group__List{
+  box-sizing: border-box;
+  height: 90%;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  .Group__List__Box{
+    border: 2px solid $jica_color;
+    background-color: #D6E5E7;
+    border-radius: 5px;
+    width: 300px;
+    height: 150px;
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 40px;
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    .Group--Content{
+      .icon{
+        display: flex;
+        overflow: hidden;
+        .imagebox{
+          height: 100px;
+          width: 130px;
+          img{
+            height: 100%;
+            width: 130px;
+            border-radius: 5px;
+          }
+        }
+        .info{
+          padding: 5px 10px;
+          font-size: $font_small;
+        }
+      }
+    }
+    .Group--Name{
+      text-align: center;
+      margin-top: 5px;
+      font-weight: bold;
+      a{
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+  .pagination{
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+  }
+}
+
+#btn--search{
+  font-size: 15px;
+}
+
+.Group__List__Box:hover{
+  opacity: 0.6;
+}

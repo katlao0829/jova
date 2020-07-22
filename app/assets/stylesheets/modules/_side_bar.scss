@@ -1,0 +1,117 @@
+.MainScreen{
+  display: flex;
+  height: 100vh;
+  background-color: $sub_white;
+  .SideBar{
+    width: $side_width;
+    height: 100%;
+    border-top: 10px solid $base_blue;
+    border-right: 6px solid $base_blue;
+    border-bottom: 10px solid $base_blue;
+    border-left: 10px solid $base_blue;
+    box-sizing: border-box;
+    background-image: url(/assets/36223.jpg);
+    .UserBox{
+      height: 250px;
+      padding: 20px;
+      border-bottom: 2px solid $base_blue_dark;
+      border-radius: 10px;
+      &__Image{
+        max-height: 130px;
+        max-width: 180px;
+        overflow: hidden;
+        text-align: center;
+        .User__image{
+          max-height: 130px;
+          max-width: 180px;
+          border-radius: 10px;
+        }
+      }
+      &__Info{
+        margin-top: 10px;
+        display: flex;
+        .User{
+          width: 130px;       
+          p.name{
+            font-size: 15px;
+            font-weight: bold;  
+            padding-bottom: 5px;
+          }
+          p.term{
+            font-size: 12px;
+          }
+          p.country{
+            font-size: 12px;
+          }
+          p.job{
+            font-size: 12px;
+          }
+        }
+        .Item--btn{
+          font-size: 8px;
+          margin-top: 20px;     
+          text-align: center;     
+          a.edit--btn{
+            @include btn-css();
+            text-decoration: none;
+            color: $base_white;
+            margin-bottom: 8px;
+            display: block;
+          }
+          a.logout{
+            @include btn-css();
+            text-decoration: none;
+            color: $base_white;
+            margin-bottom: 8px;
+            display: block;
+          }
+        }
+      }
+      &__Item{
+        .Item--Image{
+          height: 50%;
+        }
+        .Item--btn{
+          a{
+            text-decoration: none;
+            display: block;
+          }
+        }
+
+      }
+    }
+    .GroupBox{
+      padding: 20px 30px 20px 20px;
+      height: 80px;
+      text-align: center;
+      border-top: 2px solid $base_blue_dark;
+      border-bottom: 2px solid $base_blue_dark;
+      border-radius: 10px;
+      &__Go{
+        .GroupIndex{
+          @include btn-css();
+          font-size: $font_middle;
+        }
+        .GroupIndex{
+          @include btn-css-action();
+          font-size: $font_middle;
+        }
+      }
+    }
+    .DMessageBox{
+      padding: 20px;
+      border-top: 2px solid $base_blue_dark;
+      border-radius: 10px;
+      .DMessage{
+        font-size: 13px;
+        font-weight: bold;
+        border: 1px ;
+        margin-bottom: 8px;
+      }
+      .DMessage--User{
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

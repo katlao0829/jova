@@ -1,0 +1,26 @@
+= render "./groups/group_head"
+.MainChat__Chat
+  .MainChat__Chat__Content
+    .MainChat__Chat__Content__Box
+      - @messages.each do |message|
+        .Content--for--message
+          .Content
+            .items
+              = image_tag message.user.image.url
+              .user--name
+                = message.user.name
+            .message_box
+              = message.content
+    .Message__Form
+      = form_with model: [@group, @message], local: true do |f|
+        = f.text_field :content, class: "FormMessage", placeholder: "メッセージ"
+        = f.label class: "FormSubmit" do
+          = icon('far', 'paper-plane', class: "Sendicon")
+          = f.submit class: "Hidden" 
+  .MainChat__Chat__Info
+    .Group__Name
+      = @group.name
+    .Group__Info
+      = @group.info
+    .Group__btn
+      = link_to "グループ詳細", group_path(@group.id), method: :get
