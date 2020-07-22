@@ -60,6 +60,22 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Haml
+gem "haml-rails", ">= 1.0", '<= 2.0.1'
+
+# font-awesome
+gem 'font-awesome-sass'
+
+# devose login function
+gem 'devise'
+
+# image installation
+gem 'carrierwave'
+gem 'mini_magick'
+
+
+# kaminari pagenation
+gem 'kaminari'
 
 group :production do
   gem 'unicorn'
