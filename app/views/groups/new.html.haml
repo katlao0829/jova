@@ -1,0 +1,19 @@
+= render "./header"
+.Adjust
+  .MainScreen
+    = render "./side_bar"
+  .GroupForm
+    .GroupForm__title
+      %h2 新規グループ作成
+    .GroupForm__create
+      = form_with model: @group, local: true do |f|
+        = f.text_field :name, class: "form-a", placeholder: "グループ名を入力してください"
+        = f.text_area :info, class: "form-b", placeholder: "グループの説明を記載ください"      
+        .FormField
+          .FormField__label--normal
+            = f.label "グループイメージ写真"
+          .FormField__input--normal
+            = f.label :image do
+              = icon('fas', 'portrait', class: "photo")
+              = f.file_field :image, class: "hidden"
+        = f.submit "作成", class: "save-btn"

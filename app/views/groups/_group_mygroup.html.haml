@@ -1,0 +1,20 @@
+.Group__Function
+  .Search
+    %input.SearchBox{type: 'search', placeholder: 'グループ検索'}
+    %input.Btn{type: "submit", class: "btn--search", value: "検索"} 
+  .Create
+    = link_to "/groups/new", class: "btn--create" do 
+      グループを作成
+.Group__List
+  - @mygroups.each do |mygroup|
+    = link_to group_path(mygroup.id) do
+      .Group__List__Box
+        .Group--Content
+          .icon
+            .imagebox
+              = image_tag mygroup.image.url
+            .info
+              = mygroup.info
+        .Group--Name
+          = link_to "#{mygroup.name}", group_path(mygroup.id), method: :get
+  = paginate @mygroups

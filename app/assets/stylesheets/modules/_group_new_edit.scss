@@ -1,0 +1,44 @@
+.Adjust{
+  display: flex;
+  .GroupForm{
+    border-top: 10px solid $base_blue_dark;
+    border-right: 10px solid $base_blue_dark;
+    border-bottom: 10px solid $base_blue_dark;
+    width: 100%;
+    padding: 40px;
+    background-image: url(/assets/36223.jpg);
+    &__title{
+      display: flex;
+      justify-content: flex-start;
+      margin-bottom: 30px;
+      position: relative;
+      h2{
+      font-size: $font_large;
+      font-weight: bold;
+      }
+    }
+    &__create{
+      .form-a{
+        margin-top: 10px;
+        font-size: $font_middle;
+        height: 45px;
+        width: 350px;
+        border-radius: 5px;
+        display: block;
+      }
+      .form-b{
+        margin-top: 10px;
+        font-size: $font_middle;
+        height: 200px;
+        width: 350px;
+        border-radius: 5px;
+        display: block;
+      }
+      .save-btn{
+        @include btn-css();
+        display: block;
+        margin-top: 10px;
+      }
+    }
+  }
+}

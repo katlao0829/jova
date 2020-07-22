@@ -1,0 +1,77 @@
+.AccountPage{
+  padding: 40px;
+  height: 100%;
+  background-image: url(/assets/36223.jpg);
+  &__title{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    position: relative;
+    h2{
+    font-size: $font_large;
+    font-weight: bold;
+    border-bottom: 3px solid red;
+    }
+    .Button{
+      text-decoration: none;
+      @include btn-css();
+      left: 275px;
+      position: absolute;
+    }  
+  }
+  &__form{
+    width: 400px;
+    .FormField{
+      width: 400px;
+      margin-bottom: 20px;
+      &__label--normal{
+        left: 5px;
+      }
+      .User__image{
+        margin-top: 10px;
+        height: 130px;
+        width: 150px;
+        border-radius: 10px;
+      }
+      &__input--normal{
+        .form-a{
+          margin-top: 10px;
+          font-size: $font_middle;
+          height: 45px;
+          width: 350px;
+          border-radius: 5px;
+        }
+        .form-b{
+          margin-top: 10px;
+          font-size: $font_middle;
+          height: 100px;
+          width: 350px;
+          border-radius: 5px;
+        }
+        .photo{
+          font-size: 100px;
+          margin-top: 10px;
+          margin-left: 30px;
+        }
+        .hidden{
+          display: none;
+        }
+      }
+    }
+    .Update{
+      @include btn-css();
+      margin-left: 300px;
+    }
+    .actions{
+      text-align: right;
+      margin-right: 50px;
+      .UserButton{
+      @include btn-css();
+      }
+    }
+  }
+}
+.AccountAdjust{
+  height: 200px;
+  background-image: url(/assets/36223.jpg);
+}

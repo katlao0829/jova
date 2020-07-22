@@ -1,0 +1,38 @@
+.MainChat__Info
+  .MainChat__Info__Introduction
+    .UserShow
+      = image_tag @user.image.url, class: "user--image"
+      .UserInfo
+        .UserInfoA
+          %span 名前：
+          = @user.name
+        .UserInfoA
+          %span  隊次：
+          = @user.term
+        .UserInfoA
+          %span  派遣国：
+          = @user.country
+        .UserInfoA
+          %span  職種：
+          = @user.job
+        .UserInfoB
+          %p  自己紹介
+          = @user.introduction
+    - unless current_user == @user
+      - if @isRoom == true
+        =link_to "DMを送る", "/rooms/#{@roomId}", class: "UserDM"
+      - else
+        = form_for @room do |f| 
+          = fields_for @entry do |e|
+            = e.hidden_field :user_id, :value=> @user.id
+          = f.submit "DMを送る", class: "UserDM"
+  .MainChat__Info__UserGroupList
+    .UserGroupLists
+      %p 所属グループ
+      - @user.groups.each do |group|
+        = link_to group_path(group.id) do
+          .UserGroups
+            .UserGroupImage
+              = image_tag group.image.url
+            .UserGroupName
+              = group.name

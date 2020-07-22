@@ -1,0 +1,174 @@
+.MainChat{
+  height: 100%;
+  width: calc(100vw - 250px);
+  border-top: 10px solid $base_blue;
+  border-right: 10px solid $base_blue;
+  border-bottom: 10px solid $base_blue;
+  box-sizing: border-box;
+  background-image: url(/assets/36223.jpg);
+  &__Group{
+    height: 50px;
+    padding: 10px;
+    background-color: $base_blue;
+    color: $base_white;
+    display: flex;
+    align-items: flex-end;
+    p.group{
+      font-size: $font_middle;
+      font-weight: bold;
+      margin-right: 30px;
+    }
+    p.number{
+      font-size: 15px;
+    }
+  }
+  &__Chat{
+    height: 400px;
+    padding: 5px;
+    background-color: $sub_white;
+    display: flex;
+    justify-content: space-around;
+    &__Content{
+      height: 100%;
+      border-right: 5px solid $base_blue_dark;
+      &__Box{
+        height: 90%;
+        width: 750px;
+        background-color: #F0F0E8;
+        border-radius: 5px;
+        padding:20px;
+        overflow: scroll;
+        .Content--for--message{
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 30px;
+          .Content{
+            display: flex;
+            align-items: center;
+            .items{
+              margin-right: 20px;
+              width: 50px;
+              img{
+                height: 40px;
+                width: 100%;
+                border-radius: 5px;
+              }
+              .user--name{
+                font-size: $font_small;
+                text-align: center;
+              }
+            }
+            .message_box{
+              font-size: $font_middle;
+              position: relative;
+              display: inline-block;
+              margin: 1.5em 0;
+              padding: 7px 10px;
+              min-width: 120px;
+              max-width: 100%;
+              color: #555;
+              font-size: 16px;
+              background: #e0edff;
+              border-radius: 15px;
+              p{
+                text-align: center;
+              }
+            }
+          }                            
+        }
+      }
+      .Message__Form{
+        height: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input.FormMessage{
+          width: 600px;
+          height: 100%;
+          text-align: center;
+          border-color: #0f9ada;
+          border-radius: 10px;
+        }
+        label.FormSubmit{
+          font-size: 25px;
+          margin-left: 20px;
+        }
+        input.Hidden{
+          display: none;
+        }
+      }
+    }
+    &__Info{
+      width: 300px;
+      padding: 10px;
+      position: relative;
+      background-image: url(/assets/36223.jpg);
+      .Group__Name{
+        text-align: center;
+        font-size: $font_middle;
+        font-weight: bold;
+        margin: 10px 0;
+        padding-bottom: 5px;
+        border-bottom: 3px solid #CC0000;
+      }
+      .Group__Info{
+        text-align: center;
+      }
+      .Group__btn{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        a{
+          text-decoration: none;
+          color: black;
+          @include btn-css();
+        }
+        a{
+          @include btn-css-action();
+        }
+      }
+    }
+  }
+  &__Event{
+    border-top: 5px solid $base_blue_dark;
+    padding: 10px;
+    .Event__Index{
+      display: flex;
+      a.create{
+        display: block;
+        @include btn-css();
+        font-size: $font_small;
+        margin-left: 20px;
+      }
+    }
+    .Event__Line{
+      margin-top: 20px;
+      height: 150px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      .Event__Box{
+        width: 200px;
+        text-align: center;
+        margin-right: 10px;
+        border: solid 1px $base_blue_dark;
+        border-radius: 5px;
+        .Event--Info{
+          font-size: $font_middle;
+          padding-top: 5px;
+        }
+        .Event--Date{
+          font-size: $font_small;
+          margin-top: 5px;
+        }
+        .Event--Time{
+          font-size: $font_small;
+          margin-top: 5px;
+        }
+      }
+
+    }
+
+
+  }
+}

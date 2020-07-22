@@ -1,0 +1,21 @@
+.Group__Function
+  .Search
+    = form_with url: search_groups_path, class: "Form", method: :get, local: true do |f|
+      = f.text_field :keyword, class: 'SearchBox', placeholder: 'キーワードからグループを探す'
+      = button_tag "検索", type: 'submit', class: "Btn", id: "btn--search"
+  .Create
+    = link_to "/groups/new", class: "btn--create" do
+      グループを作成
+.Group__List
+  - @groups.each do |group|
+    = link_to group_path(group.id) do
+      .Group__List__Box
+        .Group--Content
+          .icon
+            .imagebox
+              = image_tag group.image.url
+            .info
+              = group.info
+        .Group--Name
+          = link_to "#{group.name}", group_path(group.id), method: :get
+  = paginate @groups

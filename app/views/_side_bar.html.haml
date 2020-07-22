@@ -1,0 +1,26 @@
+.SideBar
+  .UserBox
+    .UserBox__Image
+      = image_tag current_user.image.url, class: 'User__image' if current_user.image.present?
+    .UserBox__Info
+      .User
+        %p.name
+          = current_user.name
+        %p.term
+          = current_user.term
+        %p.country
+          = current_user.country
+        %p.job
+          = current_user.job
+      .Item--btn
+        = link_to edit_user_path(current_user), class: "edit--btn" do
+          編集
+        = link_to destroy_user_session_path, method: :delete, class: 'logout' do
+          ログアウト
+  .GroupBox
+    .GroupBox__Go
+      = link_to "/groups#index", class: "GroupIndex" do
+        グループ一覧
+  .DMessageBox
+    .DMessage
+      %p.title ダイレクトメッセージ
