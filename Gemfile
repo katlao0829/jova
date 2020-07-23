@@ -77,6 +77,8 @@ gem 'mini_magick'
 # kaminari pagenation
 gem 'kaminari'
 
+gem 'jquery-rails'
+
 group :production do
   gem 'unicorn'
 end
