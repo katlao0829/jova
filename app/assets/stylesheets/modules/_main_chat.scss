@@ -92,8 +92,9 @@
         label.FormSubmit{
           font-size: 25px;
           margin-left: 20px;
+          cursor: pointer;
         }
-        input.Hidden{
+        .Hidden{
           display: none;
         }
       }
