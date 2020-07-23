@@ -37,7 +37,7 @@
       .UserDM{
         position: absolute;
         left: 20px;
-        bottom: 0px;
+        bottom: -30px;
         @include btn-css();
         a{
           text-decoration: none;
