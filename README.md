@@ -1,5 +1,6 @@
 # アプリ名 [JO場(JOVA) JICA Old Volunteer Activity Space]
-App IP : 54.150.117.169
+URL http://54.150.117.169/
+テストアカウント e-mail: test@test.com, password: aaaaaaaa
 
 ## アプリ概要
 いわゆる途上国で2年間ボランティア活動をするという特殊な経験をしたJICA協力隊。
