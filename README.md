@@ -1,6 +1,14 @@
 # アプリ名 [JO場(JOVA) JICA Old Volunteer Activity Space]
 URL http://54.150.117.169/
-テストアカウント e-mail: test@test.com, password: aaaaaaaa
+<br>テストアカウント e-mail: test@test.com, password: aaaaaaaa
+<br>(Basic認証がついています)
+
+## 開発環境
+### 開発環境
+Ruby/Ruby on Rails/MySQL/AWS/Visual Studio Code
+### 開発期間と平均作業時間
+開発期間：約1週間
+<br>1日あたりの平均作業時間：約8時間
 
 ## アプリ概要
 いわゆる途上国で2年間ボランティア活動をするという特殊な経験をしたJICA協力隊。
@@ -31,6 +39,8 @@ JICA協力隊の多くは１人で、配属先の現地の方と一緒に活動�
 
 ## 今後実装予定の内容
 - イベント登録機能(イベント開催者のみが修正可能)
+- グループへのタグの追加(タグで検索できるように)
+- 個人の興味・関心タグの追加(タグで検索できるように)
 - 国・職種・隊次での検索機能
 - メッセージの非同期通信
 
